@@ -1,0 +1,15 @@
+{
+"c++ | Estructura Inicial": {
+  "prefix": "cc",
+  "body": [
+    "#include <iostream>",
+    "",
+    "int main()",
+    "{",
+    "",
+    "return 0;",
+    "}"
+  ],
+  "description": "c++ | Estructura Inicial"
+}
+}
