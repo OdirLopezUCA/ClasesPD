@@ -9,12 +9,22 @@ void VerificarLetras(std::string letras);
 int main()
 {
     srand(time(0));
+    int cantidad_cupones = 0;
+    std::string cupones_generados[10];
+    //Solicitar la cantidad de cupones a generar
+    std::cout<<"Ingrese la cantidad de cupones a generar: "<<endl;
+    std::cin>>cantidad_cupones;
+    //almacenar en un arreglo
+    for (int i = 0; i < cantidad_cupones; i++){
+
+        cupones_generados[i] = GenerarCupon(SolicitarDatos());
+    }
     // Solicitar al usuario las letras del cupon
 
     // Validar si tiene 3 letras o no length()
 
     // Llamar a la funcion generar cupon
-    std::string cupon_generado = GenerarCupon("AGO");
+    std::string cupones_generados = GenerarCupon("AGO");
     std::cout << "El cupon generado es: " << cupon_generado;
     VerificarCupon(cupon_generado);
     return 0;
