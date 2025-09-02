@@ -53,10 +53,24 @@ void registrarAlbum(Album &album) {
 
     album.antiguedad = calcularAntiguedad(album.anioLanzamiento);
 }
+//funcion imprimir album
+void mostrarAlbum(const Album &album) {
+    std::cout << "\n--- Información del Álbum ---\n";
+    std::cout << "Nombre del álbum: " << album.nombreAlbum << "\n";
+    std::cout << "Año de lanzamiento: " << album.anioLanzamiento << "\n";
+    std::cout << "Antigüedad: " << album.antiguedad << " años\n";
 
+    std::cout << "\n--- Canciones ---\n";
+    for (const Cancion& c : album.canciones) {
+        std::cout << "Canción #" << c.numero << ": " << c.titulo << "\n";
+        std::cout << "  Cantante: " << c.artista.nombre << "\n";
+        std::cout << "  Nacionalidad: " << c.artista.nacionalidad << "\n";
+    }
+}
 
 int main() {
     Album miAlbum;
     registrarAlbum(miAlbum);
+    mostrarAlbum(miAlbum);
     return 0;
 }
