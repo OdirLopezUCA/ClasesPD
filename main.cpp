@@ -68,6 +68,14 @@ void mostrarAlbum(const Album &album) {
     }
 }
 
+// calcular la antigüedad del álbum
+int calcularAntiguedad(int anioLanzamiento) {
+    std::time_t t = std::time(nullptr);
+    std::tm* tiempoActual = std::localtime(&t);
+    int anioActual = tiempoActual->tm_year + 1900;
+    return anioActual - anioLanzamiento;
+}
+
 int main() {
     Album miAlbum;
     registrarAlbum(miAlbum);
